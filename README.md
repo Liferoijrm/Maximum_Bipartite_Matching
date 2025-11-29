@@ -23,21 +23,23 @@ A implementação segue arquitetura modular organizada em pastas.
 
 ## 📁 Estrutura do Diretório
 ```
-root/
-│
-├── src/
-│ ├── main.py
-│ ├── preprocessing/
-│ │ └── preprocessing.py
-│ ├── SPAallocation/
-│ │ └── SPAallocation.py
-│ ├── models/
-│ │ ├── student.py
-│ │ └── project.py
-│ └── ...
-│
-└── data/
-└── data.txt
+MAXIMUM_BIPARTITE_MATCHING
+├── .venv
+├── data
+│   └── data.txt
+├── models
+│   ├── __pycache__
+│   ├── __init__.py
+│   ├── project.py
+│   └── student.py
+├── src
+│   ├── __pycache__
+│   ├── __init__.py
+│   ├── main.py
+│   ├── preprocessing.py
+│   └── SPAallocation.py
+├── .gitignore
+└── LICENSE
 ```
 
 ---
