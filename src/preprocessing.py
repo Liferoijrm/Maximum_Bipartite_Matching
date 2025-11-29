@@ -1,13 +1,12 @@
-from ..models.project import Project
-from ..models.student import Student
+from models.project import Project
+from models.student import Student
 
 def preprocessing(data_path: str):
 
     raw_project_data, raw_student_data = extractData(data_path)
     project_data, student_data = formatData(raw_project_data, raw_student_data)
-    # TODO: colocar os dados formatados com parse() em arrays Student[] e Project[]
-    # return students, projects
-    
+    projects, students = instantiateObjectsFromData(project_data, student_data)
+    return projects, students
 
 def extractData(data_path: str):
 
@@ -50,4 +49,23 @@ def formatData(raw_project_data: list, raw_student_data: list):
     
     return project_data, student_data
         
+def instantiateObjectsFromData(project_data: list, student_data: list):
+    projects: list[Project] = []
+    students: list[Student] = []
+    for data in project_data:
+        code, vacancies, minGrade = data.split(",")
+        vacancies = int(vacancies)
+        minGrade = int(minGrade)
+        projects.append(Project(code, vacancies, minGrade))
+    for data in student_data:
+        code, *StrPrefList, grade = data.split(",")
+        grade = int(grade)
+        projectPrefList: list[Project] = [] 
+        for string in StrPrefList:
+            for proj in projects:
+                if string == proj.code and proj not in projectPrefList:
+                    projectPrefList.append(proj)
+                    break
+        students.append(Student(code, projectPrefList, grade))
+    return projects, students
 
