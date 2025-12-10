@@ -33,16 +33,4 @@ def studentPrefersNewProject(student: Student2, newProject: Project2, oldProject
 
     return new_pref < old_pref
 
-def calculateProjectPreference2(projects: list[Project2], students: list[Student2]) -> dict:
-    # Com base na alocação final, calcular a preferência de cada projeto pelos estudantes alocados
-    project_preference = {}
-    for project in projects:
-        preference_list = []
-        for student in students:
-            if student.project == project:
-                preference_list.append(student)
-        # Ordenar a lista de preferência com base na nota dos estudantes (maior nota primeiro)
-        preference_list.sort(key=lambda s: s.grade, reverse=True)
-        project_preference[project.code] = preference_list
-    return project_preference
 
