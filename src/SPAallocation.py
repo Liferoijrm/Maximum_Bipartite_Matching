@@ -2,7 +2,7 @@
 from models.project import Project
 from models.student import Student
 
-def SPAallocation(projects: list[Project], students: list[Student]):
+def SPAallocation(projects: list[Project], students: list[Student]) -> dict:
     while any(student.project is None and student.didNotProposeToAll() for student in students):
         for student in students:
             if student.project is None and student.didNotProposeToAll():
@@ -28,3 +28,16 @@ def studentMeetsMoggingCriteria(student: Student, proposedProject: Project):
     elif student.grade == proposedProject.studentToBeMogged().grade and student.projectPreference(proposedProject) < proposedProject.studentToBeMogged().projectPreference(proposedProject):
         return True
     return False
+
+def calculateProjectPreference(projects: list[Project], students: list[Student]) -> dict:
+    # Com base na alocação final, calcular a preferência de cada projeto pelos estudantes alocados
+    project_preference = {}
+    for project in projects:
+        preference_list = []
+        for student in students:
+            if student.project == project:
+                preference_list.append(student)
+        # Ordenar a lista de preferência com base na nota dos estudantes (maior nota primeiro)
+        preference_list.sort(key=lambda s: s.grade, reverse=True)
+        project_preference[project.code] = preference_list
+    return project_preference
