@@ -1,0 +1,33 @@
+\begin{thebibliography}{}
+
+\bibitem[Abraham et~al. 2007]{abraham2007}
+Abraham, D.~J., Irving, R.~W., and Manlove, D.~F. (2007).
+\newblock Two algorithms for the student-project allocation problem.
+\newblock {\em Journal of Discrete Algorithms}, 5(1):73--90.
+
+\bibitem[Bondy and Murty 1976]{bondy}
+Bondy, J.~A. and Murty, U. S.~R. (1976).
+\newblock {\em Graph Theory with Applications}.
+\newblock The Macmillan Press Ltd, London, 1st edition.
+
+\bibitem[Foundation 1991]{python}
+Foundation, P.~S. (1991).
+\newblock Python programming language.
+\newblock \url{https://www.python.org/}.
+
+\bibitem[Hagberg et~al. 2008]{networkx}
+Hagberg, A.~A., Swart, P.~J., and Sculley, D. (2008).
+\newblock Networkx.
+\newblock \url{https://networkx.org/}.
+
+\bibitem[Hunter 2007]{matplotlib}
+Hunter, J.~D. (2007).
+\newblock Matplotlib: A 2d graphics environment.
+\newblock \url{https://matplotlib.org/}.
+
+\bibitem[Team 2020]{pandas}
+Team, T. P.~D. (2020).
+\newblock Pandas.
+\newblock \url{https://pandas.pydata.org/}.
+
+\end{thebibliography}
